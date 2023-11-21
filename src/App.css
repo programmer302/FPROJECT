@@ -1,13 +1,6 @@
-/* body{
-  overflow: hidden;
-  height: 100vh;
-} */
-
 :root {
   display: flex; 
   height: 100vh;
-  /* flex-flow: column wrap; */
-   /* overflow: hidden;         */
 }
 
 .main-container{
@@ -15,22 +8,19 @@
   margin: 0px;
   padding: 0px;
   flex-flow: row wrap;
-  height: 100vh;
   align-self:flex-start; 
-  
+  background-color:#32373d; 
   
 }
 
 .nav {
   display: flex;
-  height: 100vh;
-  background-color:var(--off-white);
-  top: 0px;
-  width: 15%;
+  top: 0px;  
+  width: 10%;
   align-self:flex-start;
   position: sticky;
   align-items: flex-start;
-  /* overflow: hidden; */
+  z-index: 1000;
   
 }
 .nav-logo {
@@ -45,28 +35,32 @@
 }
 
 .nav .nav-content {
+  display: flex;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
   padding: 0rem 0rem;
   margin: 0 auto;
-  display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
   width: 100%;
   align-items: center;
   
-  
 }
 
 ul.nav-items{
   list-style-type: none;
   display: flex;
+  position: sticky;
+  z-index: 1000;
   flex-direction: column;
   margin: 0;
-  padding: 0;
+  padding: 10px;
   width: 100%;
-  align-items: center;
+  align-items: top;
   font-weight: 500;
-  justify-content: center;
+  justify-content:top;
 }
 
 .nav-item {
@@ -74,13 +68,13 @@ ul.nav-items{
   flex-direction: column;
   width: 100%;
   justify-content: center;
-  
+  top:0px;
 }
 
 .nav-item>a{
-  color: #333;
+  color: #fff;
   scroll-behavior: smooth;
-  gap: 2rem;
+  gap: 1rem;
   padding: 0.5em 0em;
   display: flex;
   justify-content: center;
@@ -90,7 +84,7 @@ ul.nav-items{
 .nav-item>a:hover{
   color: white;
   cursor: pointer;
-  background:darkblue;
+  background:#007bff;
   transition: all 0.5s;
 }
 
@@ -98,17 +92,18 @@ ul.nav-items{
   display: flex;
   flex-flow: column nowrap;
   width: 85%;
-  background-image: url("./images/bg_image2.jpg");
+  background-image: url("./images/bg_image4.jpg");
+  background-size:cover;
   background-repeat:no-repeat;
   background-attachment: fixed;
-   /* overflow-y: auto; */
+  margin-right: 5%;
 }
 .section {
   display: flex;
   flex-flow: row wrap;
   text-align: justify;
   max-width: 100%;
-
+  margin: 0em 2em;
 }
 
 /* .section-dark {
@@ -166,4 +161,12 @@ ul.footer-nav-items{
 .footer-nav-item:hover {
   color:yellow;
   cursor: pointer;
+}
+
+.bars{
+  display: flex;
+  margin-top: 0.5em;
+  font-size: 1.5em;
+  color: #fff;
+  justify-content: center;
 }

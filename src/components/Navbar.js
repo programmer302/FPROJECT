@@ -1,32 +1,37 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import logo from "../images/logo.png";
 import { Link, animateScroll as scroll } from "react-scroll";
+import {FaHome, FaTh, FaBars, FaUserAlt, FaServicestack, FaPhone, FaIcons, FaCogs} from "react-icons/fa";
 
-export default class Navbar extends Component {
-  scrollToTop = () => {
-    scroll.scrollToTop();
-  };
-
-  render() {
+const Navbar = ()=> {  
+  const[isOpen, setIsOpen] = useState(false);
+  const toggle = () => {setIsOpen(!isOpen);
+    
+  }
+  // const scrollToTop = () => {scroll.scrollToTop();}  
     return (
-      <nav className="nav" id="navbar">
+      <nav className="nav" id="navbar" style={{width: isOpen? "10%" : "5%"}}>
         <div className="nav-content">
           <img
             src={logo}
             className="nav-logo"
             alt="Logo"
-            onClick={this.scrollToTop}
+            // onClick={this.scrollToTop}
           />
-          <ul className="nav-items">
-            <li className="nav-item">
+          <div  className="bars">
+              <FaBars onClick={toggle}/>
+          </div>
+          <ul className="nav-items" style={{display: isOpen? "flex" : "none"}}>
+            <li className="nav-item">            
               <Link
                 activeClass="active"
                 to="home"
                 spy={true}
                 smooth={true}
-                offset={-70}
-                duration={500}
+                offset={30}
+                duration={500}              
               >
+                <FaHome/>
                 Home
               </Link>
             </li>
@@ -36,9 +41,10 @@ export default class Navbar extends Component {
                 to="about"
                 spy={true}
                 smooth={true}
-                offset={-70}
+                offset={25}
                 duration={500}
               >
+                <FaUserAlt/>
                 About
               </Link>
             </li>
@@ -48,9 +54,10 @@ export default class Navbar extends Component {
                 to="services"
                 spy={true}
                 smooth={true}
-                offset={-70}
+                offset={25}
                 duration={500}
               >
+                <FaCogs/>
                 Services
               </Link>
             </li>
@@ -60,9 +67,10 @@ export default class Navbar extends Component {
                 to="contact"
                 spy={true}
                 smooth={true}
-                offset={-70}
+                offset={25}
                 duration={500}
               >
+                <FaPhone/>
                 Contact
               </Link>
             </li>
@@ -71,6 +79,7 @@ export default class Navbar extends Component {
           </ul>
         </div>
       </nav>
-    );
+    )
   }
-}
+
+  export default Navbar;

@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="main-container">
         <Navbar />
-        <div className="section_container">
+        <div className="section_container"  >
           <Section
             title="Home"
             subtitle={Text}
